@@ -1,0 +1,52 @@
+{
+  "name": "depup",
+  "version": "1.0.0",
+  "description": "Check npm/pnpm dependencies for updates with custom registry support",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "depup": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "dependency",
+    "update",
+    "outdated",
+    "cli",
+    "pnpm",
+    "workspace",
+    "registry"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "cli-table3": "^0.6.5",
+    "commander": "^13.1.0",
+    "glob": "^11.0.2",
+    "ora": "^8.2.0",
+    "semver": "^7.7.2",
+    "yaml": "^2.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.21",
+    "@types/semver": "^7.5.8",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
